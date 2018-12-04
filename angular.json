@@ -85,7 +85,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/angular-route/angular-route.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
