@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { RouterModule } from '@angular/router';
 import { setUpLocationSync } from '@angular/router/upgrade';
-import myAppView1 from '../../app-js/view1/view1';
+import other2 from '../../../app-js/view1/other2/other2';
 
 @Component({
-  template: `<div id="view1" ui-view></div>`
+  template: '<div id="other2" ui-view></div>'
 })
 export class EmptyComponent implements OnInit {
   constructor(private upgrade: UpgradeModule) {
   }
 
   ngOnInit(): void {
-    this.upgrade.bootstrap(document.querySelector('#view1'), [myAppView1.name]);
+    this.upgrade.bootstrap(document.querySelector('#other2'), [other2.name]);
     setUpLocationSync(this.upgrade);
   }
 }
@@ -26,15 +26,9 @@ export class EmptyComponent implements OnInit {
     CommonModule,
     UpgradeModule,
     RouterModule.forChild([
-      {
-        path: '**', component: EmptyComponent,
-        // children: [
-        //   {path: 'other1', loadChildren: './other1/other1-lazy.module#Other1LazyModule'},
-        //   {path: 'other2', loadChildren: './other2/other2-lazy.module#Other2LazyModule'}
-        // ]
-      }
+      {path: '**', component: EmptyComponent}
     ])
   ]
 })
-export class View1LazyModule {
+export class Other2LazyModule {
 }

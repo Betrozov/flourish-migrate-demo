@@ -1,4 +1,4 @@
-import { Component, DoBootstrap, NgModule, OnDestroy, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { RouterModule } from '@angular/router';
@@ -26,7 +26,7 @@ export class EmptyComponent implements OnInit {
     CommonModule,
     UpgradeModule,
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: EmptyComponent}
+      {path: '**', component: EmptyComponent}
     ])
   ]
 })
