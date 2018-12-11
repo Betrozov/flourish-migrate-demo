@@ -6,9 +6,12 @@ import { setUpLocationSync } from '@angular/router/upgrade';
 import myAppView1 from '../../app-js/view1/view1';
 
 @Component({
-  template: `<div id="view1" ui-view></div>`
+  template: `
+    <div id="view1" ui-view></div>
+    <router-outlet></router-outlet>
+  `
 })
-export class EmptyComponent implements OnInit {
+export class View1EmptyComponent implements OnInit {
   constructor(private upgrade: UpgradeModule) {
   }
 
@@ -20,21 +23,23 @@ export class EmptyComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    EmptyComponent
+    View1EmptyComponent,
   ],
   imports: [
     CommonModule,
     UpgradeModule,
     RouterModule.forChild([
       {
-        path: '**', component: EmptyComponent,
-        // children: [
-        //   {path: 'other1', loadChildren: './other1/other1-lazy.module#Other1LazyModule'},
-        //   {path: 'other2', loadChildren: './other2/other2-lazy.module#Other2LazyModule'}
-        // ]
+        path: '',
+        component: View1EmptyComponent,
+        children: [
+          {path: 'other1', loadChildren: './other1/other1-lazy.module#Other1LazyModule'},
+          {path: 'other2', loadChildren: './other2/other2-lazy.module#Other2LazyModule'}
+        ]
       }
     ])
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class View1LazyModule {
 }

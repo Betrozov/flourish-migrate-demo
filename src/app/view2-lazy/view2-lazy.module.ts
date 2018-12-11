@@ -8,7 +8,7 @@ import myAppView2 from '../../app-js/view2/view2';
 @Component({
   template: '<div id="view2" ui-view></div>'
 })
-export class EmptyComponent implements OnInit {
+export class View2EmptyComponent implements OnInit {
   constructor(private upgrade: UpgradeModule) {
   }
 
@@ -20,15 +20,16 @@ export class EmptyComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    EmptyComponent
+    View2EmptyComponent
   ],
   imports: [
     CommonModule,
     UpgradeModule,
     RouterModule.forChild([
-      {path: '**', component: EmptyComponent}
+      {path: '', component: View2EmptyComponent}
     ])
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class View2LazyModule {
 }

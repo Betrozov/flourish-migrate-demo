@@ -5,15 +5,10 @@ export const other2 = angular
   .config(['$locationProvider', '$stateProvider', function ($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
 
-    $stateProvider.state('view1.other.other2', {
-      url: '/other2',
+    $stateProvider.state('other2', {
+      url: '/*path',
       template: require('./other2.html'),
       controller: 'Other2Ctrl'
-    });
-
-    $stateProvider.state('view1.other.sink', {
-      url: '/*path',
-      template: ''
     });
   }])
   .run(() => {

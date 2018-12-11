@@ -8,7 +8,7 @@ import other1 from '../../../app-js/view1/other1/other1';
 @Component({
   template: '<div id="other1" ui-view></div>'
 })
-export class EmptyComponent implements OnInit {
+export class Other1EmptyComponent implements OnInit {
   constructor(private upgrade: UpgradeModule) {
   }
 
@@ -20,13 +20,13 @@ export class EmptyComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    EmptyComponent
+    Other1EmptyComponent
   ],
   imports: [
     CommonModule,
     UpgradeModule,
     RouterModule.forChild([
-      {path: '**', component: EmptyComponent}
+      {path: '', component: Other1EmptyComponent}
     ])
   ]
 })

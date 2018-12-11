@@ -1,20 +1,17 @@
 import * as angular from 'angular';
 
 export const other1 = angular
-  .module('other1', ['ui.router'])
+  .module('view1.other1', ['ui.router'])
   .config(['$locationProvider', '$stateProvider', function ($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
 
-    $stateProvider.state('view1.other.other1', {
-      url: '/other1',
+    $stateProvider.state('other1', {
+      url: '/*path',
       template: require('./other1.html'),
       controller: 'Other1Ctrl'
     });
 
-    $stateProvider.state('view1.other.sink1', {
-      url: '/*path',
-      template: ''
-    });
+    console.log(11111111111111111111);
   }])
   .run(() => {
     console.log('Running other1');

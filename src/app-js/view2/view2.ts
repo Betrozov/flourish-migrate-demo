@@ -6,7 +6,7 @@ export const myAppView2 = angular
     $locationProvider.html5Mode(true);
 
     $stateProvider.state('view2', {
-      url: '/view2',
+      url: '/*path',
       template: require('./view2.html'),
       controller: 'View2Ctrl'
     });

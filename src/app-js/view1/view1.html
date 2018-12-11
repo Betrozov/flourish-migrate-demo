@@ -3,8 +3,18 @@
 
 
 <ul class="menu">
-  <li><a ui-sref="view1.other.other1">Level 2:1</a></li>
-  <li><a ui-sref="view1.other.other2">Level 2:2</a></li>
+  <li><a [routerLink]="['/view1/other1']">Level 2:1</a></li>
+  <li><a [routerLink]="['/view1/other2']">Level 2:2</a></li>
+</ul>
+------------------------
+<ul class="menu">
+  <li><a ng-click="perf.goToOther1()">Level 2:1</a></li>
+  <li><a ng-click="perf.goToOther2()">Level 2:2</a></li>
+</ul>
+------------------------
+<ul class="menu">
+  <li><a ui-sref="other1">Level 2:1</a></li>
+  <li><a ui-sref="other2">Level 2:2</a></li>
 </ul>
 
 <ui-view></ui-view>
